@@ -20,9 +20,9 @@ end
 class BottleNumber
   def self.for(number)
     begin
-      const_get("BottleNumber#{number}")
+      const_get("#{self}#{number}")
     rescue NameError
-      BottleNumber
+      self
     end.new(number)
   end
 
